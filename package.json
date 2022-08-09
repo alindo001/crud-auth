@@ -26,5 +26,13 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alindo001/crud-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alindo001/crud-auth/issues"
+  },
+  "homepage": "https://github.com/alindo001/crud-auth#readme"
 }
