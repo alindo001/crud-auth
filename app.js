@@ -20,6 +20,9 @@ connectDB()
 
 const app = express() 
 
+app.use(express.urlencoded({ extended: false}))
+app.use(express.json())
+
 
 if (process.env.NODE_ENV ==='development') {
     app.use(morgan('dev'))
@@ -59,7 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use("/", require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/dashboard', require('./routes/index'))
-
+app.use('/stories' , require('./routes/stories'))
 
 const PORT = process.env.PORT || 3000
 
