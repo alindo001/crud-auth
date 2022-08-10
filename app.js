@@ -8,6 +8,7 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const connectDB = require('./config/db')
 const { default: mongoose } = require("mongoose")
+const { format } = require("path")
 
 
 
@@ -28,9 +29,13 @@ if (process.env.NODE_ENV ==='development') {
     app.use(morgan('dev'))
 }
 
+const { formatDate } = require("./helpers/hbs")
 
-app.engine('.hbs', exphbs.engine(
-    {
+
+app.engine('.hbs', exphbs.engine({
+    helpers:{
+        formatDate,
+    },
      defaultLayout: 'main',
      extname: '.hbs'
 }));   
