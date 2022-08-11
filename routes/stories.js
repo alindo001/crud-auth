@@ -65,10 +65,10 @@ router.get("/edit/:id", ensureAuth, async (req, res)=>{
     }
 
     if (story.user != req.user.id) {
-        res.redirect('/stories')
+        res.redirect('stories')
     }else{
         res.render('stories/edit', {
-            // story,
+             story,
         })
     }
 })
